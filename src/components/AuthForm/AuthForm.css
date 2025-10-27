@@ -1,0 +1,67 @@
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.twitter-logo {
+  width: 40px;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #0f1419;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  gap: 12px;
+}
+
+.input-box {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  font-size: 15px;
+  transition: border-color 0.2s;
+}
+
+.input-box:focus {
+  border-color: #1da1f2;
+}
+
+.login-btn {
+  background-color: #1da1f2;
+  border: none;
+  color: #fff;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.login-btn:hover {
+  background-color: #1991da;
+}
+
+.extra-text {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #536471;
+}
+
+.link {
+  color: #1da1f2;
+  cursor: pointer;
+  font-weight: bold;
+}
