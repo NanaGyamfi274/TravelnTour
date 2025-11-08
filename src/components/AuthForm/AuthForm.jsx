@@ -1,44 +1,88 @@
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import signupImage from "../../assets/signup-image.png";
+import "./AuthForm.css";
+import bgImage from "../../assets/signup-image.png";
 
 const AuthForm = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
+
   return (
-    <div className="flex w-full min-h-screen">
-      {/* Left Side Image */}
-      <div className="w-1/2 h-full">
-        <img src={signupImage} alt="signup" className="w-full h-full object-cover" />
-      </div>
+    <div className="auth-container">
+      {/* Left image */}
+      <div
+        className="auth-image"
+        style={{ backgroundImage: `url(${bgImage})` }}
+      ></div>
 
-      {/* Right Side Form */}
-      <div className="w-1/2 flex flex-col justify-center items-center p-10">
-        <h1 className="text-3xl font-semibold mb-6">Create Account</h1>
-        <form className="w-full max-w-md space-y-4">
-          <input
-            type="text"
-            placeholder="Full Name"
-            className="w-full border border-gray-300 p-3 rounded"
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            className="w-full border border-gray-300 p-3 rounded"
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            className="w-full border border-gray-300 p-3 rounded"
-          />
-          <button className="w-full bg-blue-600 text-white p-3 rounded mt-4 hover:bg-blue-700">
-            Sign Up
+      {/* Right form */}
+      <div className="auth-form-section">
+        <div className="form-box">
+          <h1 className="form-title">
+            Hi, Get Started Now <span className="wave">👋</span>
+          </h1>
+          <p className="form-subtitle">
+            Enter details to create your Travel Pulse account
+          </p>
+
+          <button className="google-btn">
+            <img
+              src="https://www.svgrepo.com/show/475656/google-color.svg"
+              alt="Google icon"
+            />
+            Continue with Google
           </button>
-        </form>
 
-        <p className="mt-4 text-sm">
-          Already have an account?{" "}
-          <Link to="/" className="text-blue-600 hover:underline">
-            Sign In
-          </Link>
-        </p>
+          <div className="divider">
+            <span>or</span>
+          </div>
+
+          <form>
+            <div className="input-group">
+              <input type="text" placeholder="Full Name" required />
+            </div>
+            <div className="input-group">
+              <input type="email" placeholder="Email Address" required />
+            </div>
+            <div className="input-group password-group">
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="Password"
+                required
+              />
+              <span
+                className="toggle"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? "🙈" : "👁️"}
+              </span>
+            </div>
+            <div className="input-group password-group">
+              <input
+                type={showConfirm ? "text" : "password"}
+                placeholder="Confirm Password"
+                required
+              />
+              <span
+                className="toggle"
+                onClick={() => setShowConfirm(!showConfirm)}
+              >
+                {showConfirm ? "🙈" : "👁️"}
+              </span>
+            </div>
+
+            <button type="submit" className="signup-btn">
+              Sign Up
+            </button>
+          </form>
+
+          <p className="signin-text">
+            Already have an account?{" "}
+            <Link to="/signin" className="signin-link">
+              Sign in to account
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );

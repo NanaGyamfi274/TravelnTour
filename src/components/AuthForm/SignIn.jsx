@@ -1,45 +1,81 @@
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import signinImage from "../../assets/signin-image.png";
 import "./AuthForm.css";
+import bgImage from "../../assets/signin-image.png"; // later change to your own signin image
 
 const SignIn = () => {
+  const [showPassword, setShowPassword] = useState(false);
+
   return (
-    <div className="flex w-full min-h-screen">
-      {/* Left Image */}
-      <div className="w-1/2 h-screen">
-        <img
-          src={signinImage}
-          alt="Sign In"
-          className="w-full h-full object-cover"
-        />
-      </div>
+    <div className="auth-container">
+      {/* Left side image */}
+      <div
+        className="auth-image"
+        style={{ backgroundImage: `url(${bgImage})` }}
+      ></div>
 
-      {/* Right Form */}
-      <div className="w-1/2 flex flex-col justify-center items-center p-10 bg-gray-100">
-        <h1 className="text-3xl font-semibold mb-6">Welcome Back</h1>
+      {/* Right form section */}
+      <div className="auth-form-section">
+        <div className="form-box">
+          <h1 className="form-title">
+            Welcome Back <span className="wave">👋</span>
+          </h1>
+          <p className="form-subtitle">
+            Continue with Google or enter login details
+          </p>
 
-        <form className="w-full max-w-md space-y-4">
-          <input
-            type="email"
-            placeholder="Email"
-            className="w-full border border-gray-300 p-3 rounded"
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            className="w-full border border-gray-300 p-3 rounded"
-          />
-          <button className="w-full bg-blue-600 text-white p-3 rounded hover:bg-blue-700">
-            Sign In
+          {/* Google button */}
+          <button className="google-btn">
+            <img
+              src="https://www.svgrepo.com/show/475656/google-color.svg"
+              alt="Google icon"
+            />
+            Continue with Google
           </button>
-        </form>
 
-        <p className="mt-4 text-sm">
-          Don’t have an account?{" "}
-          <Link to="/signup" className="text-blue-600 hover:underline">
-            Sign Up
-          </Link>
-        </p>
+          <div className="divider">
+            <span>or</span>
+          </div>
+
+          <form>
+            <div className="input-group">
+              <input type="email" placeholder="Email Address" required />
+            </div>
+            <div className="input-group password-group">
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="Password"
+                required
+              />
+              <span
+                className="toggle"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? "🙈" : "👁️"}
+              </span>
+            </div>
+
+            <div className="form-options">
+              <label>
+                <input type="checkbox" /> Remember me
+              </label>
+              <Link to="#" className="forgot-password">
+                Forget Password
+              </Link>
+            </div>
+
+            <button type="submit" className="signup-btn">
+              Log In
+            </button>
+          </form>
+
+          <p className="signin-text">
+            Don’t have an account?{" "}
+            <Link to="/" className="signin-link">
+              Create account
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );

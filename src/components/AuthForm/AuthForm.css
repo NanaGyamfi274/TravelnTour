@@ -1,122 +1,207 @@
-/* === AuthForm.css === */
+/* ==============================
+   AUTH FORM STYLES
+   ============================== */
 
-/* Overall container setup */
-.flex {
+.auth-container {
   display: flex;
-}
-
-.w-full {
-  width: 100%;
-}
-
-.h-screen,
-.min-h-screen {
   min-height: 100vh;
+  font-family: "Inter", sans-serif;
 }
 
-/* Left image area */
-img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+/* ------------------------------
+   Left image section
+------------------------------ */
+.auth-image {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  display: none;
 }
 
-/* Form container */
-form {
+@media (min-width: 768px) {
+  .auth-image {
+    display: block;
+  }
+}
+
+/* ------------------------------
+   Right form section
+------------------------------ */
+.auth-form-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 2rem;
+}
+
+.form-box {
   width: 100%;
   max-width: 400px;
+}
+
+.form-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.wave {
+  font-size: 1.8rem;
+}
+
+.form-subtitle {
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+/* ------------------------------
+   Google button
+------------------------------ */
+.google-btn {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 9999px;
+  padding: 0.8rem;
+  font-weight: 500;
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-/* Input fields */
-input {
-  padding: 0.75rem 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  outline: none;
-  font-size: 1rem;
-  transition: all 0.2s ease;
-}
-
-/* Input focus effect */
-input:focus {
-  border-color: #2563eb; /* Tailwind blue-600 */
-  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
-}
-
-/* Buttons */
-button {
-  padding: 0.75rem 1rem;
-  border: none;
-  border-radius: 6px;
-  background-color: #2563eb;
-  color: white;
-  font-weight: 600;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: #fff;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: 0.3s ease;
 }
 
-button:hover {
-  background-color: #1e40af; /* Darker blue */
+.google-btn:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
-/* Text and link */
-h1 {
-  font-size: 1.875rem; /* text-3xl */
-  font-weight: 600;
-  margin-bottom: 1.5rem;
+.google-btn img {
+  width: 20px;
+  height: 20px;
 }
 
-p {
-  margin-top: 1rem;
-  font-size: 0.875rem;
+/* ------------------------------
+   Divider
+------------------------------ */
+.divider {
+  text-align: center;
+  margin: 1.5rem 0;
+  position: relative;
 }
 
-a {
-  color: #2563eb;
+.divider::before,
+.divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 45%;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.divider::before {
+  left: 0;
+}
+.divider::after {
+  right: 0;
+}
+
+.divider span {
+  background: #fff;
+  padding: 0 0.5rem;
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+/* ------------------------------
+   Inputs
+------------------------------ */
+.input-group {
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: none;
+  border-bottom: 1px solid #d1d5db;
+  font-size: 1rem;
+  outline: none;
+  background: transparent;
+  transition: border 0.3s;
+}
+
+.input-group input:focus {
+  border-bottom-color: #3b82f6;
+}
+
+.password-group .toggle {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.7rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ------------------------------
+   Remember me + Forgot Password
+------------------------------ */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; /* spacing before Login/Signup button */
+}
+
+.forgot-password {
+  color: #3b82f6;
+  font-size: 14px;
   text-decoration: none;
 }
 
-a:hover {
+.forgot-password:hover {
   text-decoration: underline;
 }
 
-/* Background for form area */
-.bg-gray-100 {
-  background-color: #f3f4f6;
+/* ------------------------------
+   Buttons
+------------------------------ */
+.signup-btn {
+  width: 100%;
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-/* Center form vertically */
-.flex-col {
-  display: flex;
-  flex-direction: column;
+.signup-btn:hover {
+  background-color: #2563eb;
 }
 
-.justify-center {
-  justify-content: center;
+/* ------------------------------
+   Sign-in link text
+------------------------------ */
+.signin-text {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #6b7280;
 }
 
-.items-center {
-  align-items: center;
+.signin-link {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
 }
 
-.p-10 {
-  padding: 2.5rem;
-}
-
-/* Responsive fix: stack vertically on mobile */
-@media (max-width: 768px) {
-  .flex {
-    flex-direction: column;
-  }
-
-  .half-width{
-    width: 100%;
-  }
-
-  img {
-    height: 40vh;
-  }
+.signin-link:hover {
+  text-decoration: underline;
 }
