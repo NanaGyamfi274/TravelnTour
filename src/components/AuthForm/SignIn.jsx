@@ -59,8 +59,8 @@ const SignIn = () => {
               <label>
                 <input type="checkbox" /> Remember me
               </label>
-              <Link to="#" className="forgot-password">
-                Forget Password
+              <Link to="/forgot-password" className="forgot-password">
+                Forget Password?
               </Link>
             </div>
 
