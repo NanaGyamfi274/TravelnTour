@@ -1,6 +1,7 @@
 import React from "react";
 import "./LandingPage.css";
 import { Link } from "react-router-dom";
+import icons from "../../assets/icons.png"; // 👈 your single image
 
 const LandingPage = () => {
   return (
@@ -9,7 +10,6 @@ const LandingPage = () => {
       <header className="landing-header">
         <div className="logo">TRAVEL PULSE</div>
         <nav className="nav-links">
-          {/* <a href="#">Home</a> */}
           <a href="#">Destinations</a>
           <a href="#">Stories</a>
           <a href="#">Reviews</a>
@@ -45,26 +45,11 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* FEATURED LOGOS */}
+      {/* FEATURED ICONS */}
       <section className="featured">
         <p>As featured in</p>
-        <div className="featured-logos">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/6/66/Travel_Channel_logo.svg"
-            alt="Travel Channel"
-          />
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/9/9f/CNN_International_logo.svg"
-            alt="CNN"
-          />
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/4/4f/New_York_Times_logo_variation.jpg"
-            alt="NYT"
-          />
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/4/40/BBC_News_2022_%28Alt%29.svg"
-            alt="BBC"
-          />
+        <div className="featured-icons">
+          <img src={icons} alt="Featured Icons" />
         </div>
       </section>
 
@@ -142,7 +127,10 @@ const LandingPage = () => {
             />
             <div>
               <h3>Journey Through the Sahara Desert</h3>
-              <p>Discover the vast beauty and adventure of Africa’s largest desert.</p>
+              <p>
+                Discover the vast beauty and adventure of Africa’s largest
+                desert.
+              </p>
             </div>
           </div>
           <div className="story">
@@ -162,7 +150,10 @@ const LandingPage = () => {
             />
             <div>
               <h3>The Magic of Tokyo Nights</h3>
-              <p>Experience the neon lights, culture, and cuisine of Japan’s capital.</p>
+              <p>
+                Experience the neon lights, culture, and cuisine of Japan’s
+                capital.
+              </p>
             </div>
           </div>
         </div>

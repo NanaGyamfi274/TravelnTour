@@ -103,7 +103,7 @@
   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }
 
-/* FEATURED LOGOS */
+/* FEATURED ICONS */
 .featured {
   text-align: center;
   padding: 40px 0;
@@ -115,16 +115,18 @@
   margin-bottom: 20px;
 }
 
-.featured-logos {
+.featured-icons {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 50px;
 }
 
-.featured-logos img {
-  height: 40px;
-  opacity: 0.7;
+.featured-icons img {
+  height: 60px;
+  width: auto;
+  opacity: 0.9;
+  max-width: 80%;
+  object-fit: contain;
 }
 
 /* SECTIONS */
