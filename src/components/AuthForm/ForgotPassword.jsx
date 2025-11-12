@@ -23,7 +23,7 @@ const ForgotPassword = () => {
           </p>
 
 <div className="forgot-input-email">
-          <label className="forgot-label">Email Address</label>
+          {/* <label className="forgot-label">Email Address</label> */}
           <input
             type="email"
             placeholder="Enter your email"

@@ -1,10 +1,20 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // ✅ import useNavigate
 import "./AuthForm.css";
 import bgImage from "../../assets/signin-image.png"; // later change to your own signin image
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate(); // ✅ initialize navigation
+
+  // ✅ Handle login and navigate
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    // Temporary "success" condition
+    // (You can replace this with real authentication later)
+    navigate("/landing");
+  };
 
   return (
     <div className="auth-container">
@@ -37,7 +47,8 @@ const SignIn = () => {
             <span>or</span>
           </div>
 
-          <form>
+          {/* ✅ added handleLogin here */}
+          <form onSubmit={handleLogin}>
             <div className="input-group">
               <input type="email" placeholder="Email Address" required />
             </div>
